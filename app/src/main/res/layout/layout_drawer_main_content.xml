@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/id_textclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="textclick"
+        android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/id_getbright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_textclick"
+        android:layout_marginTop="20dp"
+        android:text="获取亮度" />
+
+    <Button
+        android:id="@+id/id_setbright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_textclick"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/id_getbright"
+        android:text="设置亮度" />
+
+    <Button
+        android:id="@+id/id_aotu_bright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_textclick"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/id_setbright"
+        android:text="自动亮度" />
+
+    <Button
+        android:id="@+id/id_day_night"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_textclick"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/id_aotu_bright"
+        android:text="日间黑夜" />
+
+</RelativeLayout>

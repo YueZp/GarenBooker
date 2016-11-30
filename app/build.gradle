@@ -20,7 +20,15 @@ android {
     }
     lintOptions {
         abortOnError false
+        xmlReport false
+        fatal 'NewApi', 'InlinedApi'
+        check 'NewApi', 'InlinedApi'
     }
+    dexOptions{
+        preDexLibraries true
+        javaMaxHeapSize "4g" //最主要是这句, 不过改成8g没有更显著的提升
+    }
+
 }
 
 dependencies {
@@ -44,7 +52,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     // Rx
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex:rxjava:1.2.0'
     // Bus
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.android.support:multidex:1.0.1'
 }

@@ -3,8 +3,7 @@ package org.yuezp.garenbooker.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
-
+import android.view.LayoutInflater;
 import org.yuezp.garenbooker.utils.LogInfo;
 
 import butterknife.ButterKnife;
@@ -14,18 +13,20 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private static final String TAG = BaseActivity.class.getSimpleName();
+    protected String TAG = BaseActivity.class.getSimpleName();
     protected Context mContext;
     protected boolean isFullScreen;
+    protected LayoutInflater mInflater;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(getLayoutID());
         mContext = this;
+        mInflater = LayoutInflater.from(this);
 //        StatusBarCompat.compat(this, 0); 采取styles 主题方案设置 暂时不采用。
-        ButterKnife.bind(this);
+
 
 
         LogInfo.log(TAG, "onCreate");
@@ -40,6 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        ButterKnife.bind(this);
         LogInfo.log(TAG, "onStart");
     }
 
@@ -67,12 +69,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         LogInfo.log(TAG, "onDestroy");
     }
 
-    /**
-     * 设置ContentView
-     *
-     * @return
-     */
-    protected abstract int getLayoutID();
+
 
 
 }

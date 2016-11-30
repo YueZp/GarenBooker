@@ -6,25 +6,39 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 
 import org.yuezp.garenbooker.R;
-import org.yuezp.garenbooker.base.BaseActivity;
+import org.yuezp.garenbooker.base.GarenTitleBaseActivity;
 import org.yuezp.garenbooker.utils.UIsUtils;
 
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends GarenTitleBaseActivity {
 
     private int systemBrightness;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        TAG = MainActivity.class.getSimpleName();
+    }
+
+    @Override
+    protected void initView() {
+
 
     }
 
     @Override
-    protected int getLayoutID() {
-        return R.layout.activity_main;
+    protected void initData() {
+
     }
+
+    @Override
+    protected void onFinish() {
+
+    }
+
 
     @Override
     protected void onResume() {

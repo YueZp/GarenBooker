@@ -6,3 +6,8 @@
 建议采取的方法：建立多个SDK版本的values文件夹，系统会根据SDK的版本选择合适的Theme进行设置。如：values、values-v19、values-v21
 values-v21 的存在是因为在Android 5.x需要把statusBarColor颜色设置透明，否则导航栏会呈现系统默认的浅灰色;
 3.在Activity的布局文件中 要在根布局里添加属性：android:fitsSystemWindows="true"
+
+
+
+## 零碎知识点：
+1.继承AppCompatActivity，样式的话也必须使用它的子类样式，否则报错！eg>: Theme.AppCompat...
